@@ -23,6 +23,6 @@ Message format specification between *MukioPlayer* Client and Server
 3. 基于文本的实时 RPC 协议
 4. 服务器示例程序
 
-本项目描述的规范, 将在 *MukioPlayer* 播放器未来的版本实现. 
+本项目描述的规范的客户端部分, 将在 *MukioPlayer* 播放器未来的版本中实现. 
 
 
