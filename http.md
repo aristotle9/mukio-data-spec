@@ -21,7 +21,7 @@
   <server>
 	...
     <!-- 弹幕加载地址,变量{$cid}为弹幕cid -->
-    <load>/path_for_load</load>
+    <load>/path_for_load?cid={$cid}</load>
     <!-- 弹幕发送地址,变量{$cid}为弹幕cid -->
     <send>/path_for_send</send>
 	...
@@ -31,7 +31,8 @@
 
 存取弹幕的 HTTP 地址中，可能需要包含弹幕的 `cid`，这也可以在配置文件中实现。
 
-### 弹幕存储(发送)
+### 弹幕存储（发送）
+
 
 
 ### 弹幕获取
