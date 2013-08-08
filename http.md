@@ -6,9 +6,30 @@
 
 客户端总是将 `cid` 当作 **String 类型**处理，这主要体现在编码 JSON 时。
 
-### 存取 URL 位置配置
+### 存取弹幕的 HTTP 接口地址
 
+通过修改 *MukioPlayer* 播放器同一路径下的 `conf.xml` 文件，来配置存取弹幕的 HTTP 接口地址。
 
+相关配置片段：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<conf>
+  <performance>
+    ...
+  </performance>
+  <server>
+	...
+    <!-- 弹幕加载地址,变量{$cid}为弹幕cid -->
+    <load>/path_for_load</load>
+    <!-- 弹幕发送地址,变量{$cid}为弹幕cid -->
+    <send>/path_for_send</send>
+	...
+  </server>
+</conf>
+```
+
+存取弹幕的 HTTP 地址中，可能需要包含弹幕的 `cid`，这也可以在配置文件中实现。
 
 ### 弹幕存储(发送)
 
