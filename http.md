@@ -12,7 +12,7 @@
 
 相关配置片段：
 
-```xml
+```
 <?xml version="1.0" encoding="utf-8"?>
 <conf>
   <performance>
@@ -31,8 +31,56 @@
 
 存取弹幕的 HTTP 地址中，可能需要包含弹幕的 `cid`，这也可以在配置文件中实现。
 
+配置中的地址变量会在下面的文档中，以 . 分隔的路径加以引用。
+
 ### 弹幕存储（发送）
 
+Location: conf.server.send
 
+Method: POST
+
+Body: JSON-encoded
+
+```
+{
+  text:
+  stime:
+  color:
+  mode:
+  size:
+  cid: String, passed through flashvars
+  postdate: UNIX timestamp in milliseconds
+  context: Integer, should be returned within response
+}
+```
+
+Return: JSON-encoded
+
+```
+{
+  context: Integer, same as the context property in post body
+  id: Danmu id, if accepted by server, or should not be provided
+  error: The reason when rejected by server, otherwise should not be provided
+    {
+      code: Error code, defined by Server
+      message: Error information to display to user
+    }
+}
+```
 
 ### 弹幕获取
+
+Location: conf.server.load
+
+Method: GET
+
+Params: `cid` will be passed by `{$cid}` interpolation in *Location*
+
+Return: JSON-encoded
+
+```
+{
+  cid:
+  data: Array of Danmu data objects
+}
+```
