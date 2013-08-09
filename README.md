@@ -19,7 +19,7 @@ Message format specification between *MukioPlayer* Client and Server
 项目由以下几个部分组成:
 
 1. [弹幕数据](https://github.com/aristotle9/mukio-data-spec/blob/master/basic.md)
-2. HTTP 弹幕存取
+2. [HTTP 弹幕存取](https://github.com/aristotle9/mukio-data-spec/blob/master/http.md)
 3. 基于文本的实时 RPC 协议
 4. 服务器示例程序
 
